@@ -1,0 +1,4 @@
+#! /usr/bin/bash
+
+
+PS1="$1@\h \w $ "

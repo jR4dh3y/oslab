@@ -1,0 +1,70 @@
+#! /usr/bin/bash
+
+# A) write script that determines the period for which specified user 
+#    is working on system
+
+if [ -z $1 ]
+then
+    user=$(whoami)
+else
+    user=$1
+fi
+
+start=$(last $user | head -n 1 | awk '{print  $7}')
+end=$(date +%H:%M )
+
+uptime=$(echo "$end:$start" | awk -F: '{print ($1-$3)*60 + ($2-$4)}')
+
+echo "Uptime for $user is $uptime minutes"
+
+
+
+
+
+
+# B) write a shell script that displays all the lines between start and end line numbers
+#    passed as arguments
+
+if [ $# -ne 3 ]
+then
+	echo "Usage: $0 <start> <end> <file>"
+	exit 1
+fi
+
+start=$1
+end=$2
+file=$3
+
+if [ -f $file ]
+then
+	sed -n "$start, $end p" $file
+else
+	echo "$file is not a file"
+fi
+
+
+
+
+
+# C) write a shell script that deletes all lines containing a specified word in one or more files
+#   supplied as arguments to it.
+
+if [ $# -lt 2 ]
+then
+	echo "Usage: $0 <word> <file1> <file2> ... <fileN>"
+	exit 1
+fi
+
+word=$1
+shift
+
+for file in $@
+do
+	if [ -f $file ]
+	then
+		grep -v -i $word $file > /tmp/tmpfile
+		mv /tmp/tmpfile $file
+	else
+		echo "$file is not a file"
+	fi
+done

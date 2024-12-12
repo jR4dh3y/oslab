@@ -1,0 +1,5 @@
+#! /bin/bash
+
+
+# create a directory named lab_session in your home directory
+# inside it create two sub-directories

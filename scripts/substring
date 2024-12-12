@@ -1,0 +1,20 @@
+#! /usr/bin/bash
+
+#   1) to extract a substring from a given string
+#   2) to find the length of a string
+
+
+if [ $# -lt 3 ]
+then
+    echo "Usage: $0 <start> <end> <string> "
+    exit 1
+fi
+start=$1
+end=$2
+
+shift 2
+string=$@
+substring=${string:$start:$((end - start + 1)) }
+
+echo "Substring = $substring"
+echo "Length = ${#substring}"

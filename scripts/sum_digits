@@ -1,0 +1,23 @@
+#! /usr/bin/bash
+
+
+# sum of digits of a number
+#
+
+if [ $# -eq 0 ];
+then
+    echo "Usage: $0 <number>"
+    exit 1
+fi
+
+num=$1
+sum=0
+
+while [ $num -ne 0 ]
+do
+    re=$((num % 10))
+    sum=$((sum + re))
+    num=$((num /10))
+done
+
+echo "Sum of digits: $sum"

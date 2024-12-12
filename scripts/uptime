@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+
+if [ -z $1 ]
+then
+    user=$(whoami)
+else
+    user=$1
+fi
+
+start=$(last $user | head -n 1 | awk '{print $6}')
+end=$(date +%H:%M )
+
+uptime=$(echo "$end:$start" | awk -F: '{print ($1-$3)*60 + ($2-$4)}')
+
+echo "Uptime for $user is $uptime minutes"

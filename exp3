@@ -1,0 +1,26 @@
+#! /usr/bin/bash
+
+
+# A) write a shell script that takes a command line argument and reports on whether it is a directory, a file.
+
+
+if [ -f $1 ];
+then
+	echo "$1 is a File"
+elif [ -d $1 ];
+then
+	echo "$1 is a Directory"
+else
+	echo "$1 is Neither File nor Directory"
+fi	
+
+
+# B) write a shell script that takes file name(s) as a command line and converts all of them to uppercase
+for file in "$@"
+do
+	if [ -f $file  ];
+	then
+		cat $file | tr "[:lower:]" "[:upper:]" | echo > /tmp/tmpupper
+		cat /tmp/tmpupper > $file
+	fi
+done

@@ -1,0 +1,18 @@
+#! /usr/bin/bash
+
+# shell script to add N numbers
+
+echo "Enter No. of integers to be added"
+read N
+
+sum=0
+
+echo "Enter $N numbers one by one"
+while [ ! $N -eq 0 ]
+do
+    read number
+    sum=$(($sum + $number))
+    N=$((N-1))
+done
+
+echo "Sum = $sum"

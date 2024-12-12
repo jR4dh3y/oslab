@@ -1,0 +1,20 @@
+#! /bin/env bash
+
+# Practice basic bash, IO redirection, pipe, file and directory operations, searching files, process management and vi/nano editor commands
+
+# check default shell 
+echo $SHELL
+
+pwd
+/usr/bin/ls 
+
+cd testfolder
+mkdir subfolder
+mv subfolder folder
+
+touch filename.txt
+rm filename.txt
+
+cd ..
+pwd
+cd /

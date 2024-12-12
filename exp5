@@ -1,0 +1,6 @@
+#! /usr/bin/bash
+
+# write a shell script and C program to perform the following string operations
+#   1) to extract a substring from a given string
+#   2) to find the length of a string
+# and compare the time of both

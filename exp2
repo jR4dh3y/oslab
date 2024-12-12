@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+
+# Part A
+# Use the "date" and "who" command in one line such that the output
+# of "date" is displayed and output of "who" is redirected to a file
+
+date; who > who.txt
+date && who > who.txt
+
+
+# Part B
+# Write an "sed" command that swaps the first and second words in 
+# each line in a file 
+
+sed 's/<src> /<dest>/g' file.txt
+
+sed 's/^\([^ ]*\) \([^ ]*\)/\2 \1/' file.txt

@@ -1,0 +1,21 @@
+#! /usr/bin/bash
+
+if [ $# -lt 2 ]
+then
+	echo "Usage: $0 <word> <file1> <file2> ... <fileN>"
+	exit 1
+fi
+
+word=$1
+shift
+
+for file in $@
+do
+	if [ -f $file ]
+	then
+		grep -v -i $word $file > /tmp/tmpfile
+		mv /tmp/tmpfile $file
+	else
+		echo "$file is not a file"
+	fi
+done

@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+# write a cpu bound C-program and an IO-bound C-program and compare their cpu share using top and its derivatives

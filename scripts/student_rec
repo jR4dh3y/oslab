@@ -1,0 +1,23 @@
+#! /usr/bin/bash
+
+# write a shell script to maintain student records as input for 3 subjects
+# and find the average of the total marks
+
+
+echo "Enter Name: "
+read name
+
+echo "Enter Roll: "
+read roll
+
+echo "Enter Subjects"
+
+read s1
+read s2
+read s3
+
+sum=$((s1 + s2 + s3))
+echo "Sum = $sum"
+
+avg=$((sum / 3))
+echo "Average = $avg"

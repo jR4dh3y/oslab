@@ -1,0 +1,6 @@
+
+##
+A # Write a C program to implement `wait` and `signal`
+    functions/operations using semaphores
+
+B # Implement Producer Consumer problem using semaphores
